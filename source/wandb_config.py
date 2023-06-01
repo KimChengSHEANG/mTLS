@@ -1,0 +1,7 @@
+
+WANDB_PROJECT_NAME = 'mTLS'
+WANDB_API_KEY = 'API_KEY'
+WANDB_MODE = 'offline' 
+
+
+    
