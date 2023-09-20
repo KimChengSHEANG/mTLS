@@ -22,8 +22,8 @@ class MyModel(pl.LightningModule):
         super(MyModel, self).__init__()
         self.save_hyperparameters()
         
-        # self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name, device_map="auto", load_in_8bit=True)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name)
+        # self.model = AutoModelForSeq2SeqLM.from_pretrained(self.hparams.model_name, device_map="auto", load_in_8bit=True)
         self.tokenizer = AutoTokenizer.from_pretrained(self.hparams.model_name)
         # if 'mt5' in self.hparams.model_name:
         #     self.tokenizer.src_lang = f'{self.hparams.lang}_XX'

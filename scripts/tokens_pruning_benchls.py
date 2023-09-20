@@ -24,7 +24,7 @@ def run_tuning(params):
     print(features_kwargs)
         
     preprocessor = Preprocessor(features_kwargs, lang)
-    test_set = pd.read_csv(RESOURCES_DIR / 'mask_pred_candidates/BenchLS_topk_10_bert-large-cased.csv')
+    test_set = pd.read_csv(RESOURCES_DIR / 'mask_pred_candidates/BenchLS_topk_10_roberta-base.csv')
     test_set = preprocessor.preprocess_valid_or_test_set(test_set, use_mask_pred_candidates=False)
     
     return evaluation_pruning(test_set, 'benchls', features_kwargs, phase=phase, lang=lang, model_dirname=model_name)
